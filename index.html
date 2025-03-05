@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lucca Paiva</title>
     <link rel="stylesheet" href="src/styles/reset.css"/>
     <link rel="stylesheet" href="src/styles/styles.css"/>
     <script src="https://kit.fontawesome.com/51dba66f93.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,15 +18,16 @@
         <nav class="navbar">
             <span class="logo">Portfolio</span>
             <div class="anchors">
-                <span>Sobre</span>
-                <span>Skills</span>
-                <span>Projetos</span>
+                <a href="#about-anchor"><span>Sobre</span></a>
+                <a href="#skills-anchor"><span>Habilidades</span></a>
+                <a href="#projects-anchor"><span>Projetos</span></a>
+                <a href="#contact-anchor"><span>Contato</span></a>
                 <span class="download-button">Download CV</span>
             </div>
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="display hero">
         <div class="hero-container">
             <div class="hero-context">
                 <h1>Lucca Paiva</h1>
@@ -39,20 +43,20 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="img"></div>
+                <img src="/src/assets/my-photo.jpg">
                 <div class="image-detail"></div>
             </div>
         </div>
     </section>
 
-    <section class="about">
+    <section class="display about">
         <div class="about-container">
-            <div class="about-description">
-                <span class="about-title">Sobre mim</span>
+            <div id="about-anchor" class="description">
+                <span class=" title">Sobre mim</span>
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <div class="image"></div>
+                    <img src="./src/assets/my-photo.jpg">
                     <div class="img-detail"></div>
                 </div>
                 <div class="about-text">
@@ -67,10 +71,10 @@
         </div>
     </section>
 
-    <section class="skills">
-        <div class="skills-container">
-            <div class="skills-description">
-                <span class="skills-title">Skills</span>
+    <section class="section skills">
+        <div class="resource-container">
+            <div id="skills-anchor" class="description">
+                <span class="skills-title">Habilidades</span>
                 <p>Algumas de minhas habilidades:</p>
             </div>
             <div class="skills-display">
@@ -168,9 +172,9 @@
         </div>
     </section>
 
-    <section class="projects">
-        <div class="projects-container">
-            <div class="projects-description">
+    <section class="section projects">
+        <div class="resource-container">
+            <div id="projects-anchor" class="description">
                 <span class="projects-title">Projetos</span>
                 <p>Alguns de meus projetos:</p>
             </div>
@@ -233,10 +237,10 @@
         </div>
     </section>
 
-    <section class="contact">
+    <section class="section contact">
         <div class="contact-container">
-            <div class="contact-description">
-                <span class="contact-title">Entre em contato</span>
+            <div id="contact-anchor" class="description">
+                <span class="title">Entre em contato</span>
                 <p>Sinta-se à vontade para me contatar se estiver procurando um desenvolvedor, tiver alguma dúvida ou simplesmente quiser se conectar.</p>
             </div>
 

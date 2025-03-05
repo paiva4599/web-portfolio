@@ -1,28 +1,47 @@
-body{
-    background-color: var(--Gray-Dark-Default, #030712);
+:root {
+    --font-primary: "Inter", sans-serif;
+    --color-primary: #030712;
+    --color-secondary: #F9FAFB;
+    --color-tertiary: #10B981;
+    --color-border: rgba(0, 0, 0, 0.1);
+    --color-button: #10B981;
+    --color-task-bg: #D1D5DB;
+    --color-task: #111827;
+    --color-card: #26313F;
+    --font-size: 16px;
 }
 
+body{
+    background-color: var(--color-primary);
+    font-family: var(--font-primary);
+}
+
+/* HEADER */
 header{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.00);
-    background: var(--Gray-Dark-Default, #030712);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-primary);
 }
 
 .navbar{
+    width: 100%;
+    position: fixed;
     display: flex;
     padding: 16px 80px;
     justify-content: space-between;
     align-items: center;
-    color: white
+    color: white;
+    border-bottom: solid 2px var(--color-button);
+    background-color: var(--color-primary);
+    z-index: 5;
 }
 
 .navbar .logo{
-    color: var(--Gray-Dark-900, #F9FAFB);
+    color: var(--color-secondary);
     text-align: center;
-    font-family: Inter;
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
-    line-height: 36px; /* 120% */
+    line-height: 36px;
     letter-spacing: -0.6px;
 }
 
@@ -34,14 +53,11 @@ header{
 }
 
 .navbar span{
-    color: var(--Gray-Dark-600, #D1D5DB);
-
-    /* Body2/Medium - All */
-    font-family: Inter;
+    color: var(--color-task-bg);
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
 }
 
 .navbar .anchors .download-button{
@@ -51,11 +67,12 @@ header{
     align-items: center;
     gap: 8px;
     border-radius: 12px;
-    background: var(--Gray-Dark-900, #F9FAFB);
-    color: var(--Gray-Dark-50, #111827);
+    background: var(--color-button);
+    color: var(--color-secondary);
 }
 
-.hero{
+/* HERO */
+.display{
     display: flex;
     padding: 96px 80px;
     justify-content: space-between;
@@ -83,14 +100,11 @@ header{
 }
 
 .hero .hero-container .hero-context h1{
-    color: var(--Gray-Dark-900, #F9FAFB);
-
-    /* Heading/H1/Bold - Desktop */
-    font-family: Inter;
+    color: var(--color-secondary);
     font-size: 60px;
     font-style: normal;
     font-weight: 700;
-    line-height: 72px; /* 120% */
+    line-height: 72px;
     letter-spacing: -1.2px;
 }
 
@@ -107,27 +121,25 @@ header{
 }
 
 .hero .hero-container .hero-context p{
-    color: var(--Gray-Dark-600, #D1D5DB);
-    width: 768px;
-
-    /* Body2/Normal - All */
-    font-family: Inter;
+    font-family: var(--font-primary);
+    color: var(--color-task-bg);
+    width: 700px;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     text-align: justify;
-    line-height: 25px; /* 150% */
+    line-height: 25px;
 }
 
 .hero .hero-container .hero-context .hero-media{
     display: flex;
     flex-direction: row;
-    color: white;
+    color: var(--color-secondary);
     font-size: 20px;
     gap: 10px;
 }
 
-.hero .hero-container .hero-image {
+.hero .hero-container .hero-image{
     display: flex;
     min-width: 384px;
     flex-direction: column;
@@ -135,43 +147,34 @@ header{
     align-items: flex-end;
     flex: 1 0 0;
     align-self: stretch;
-    position: relative; /* Para posicionar os elementos internos corretamente */
+    position: relative;
 }
 
-.hero .hero-container .hero-image .img {
-    border: 8px solid var(--Gray-Dark-Default, #030712);
-    background: url("../assets/my-photo.jpg") lightgray 50% / cover no-repeat;
-    
-    width: 280px;
+.hero .hero-container .hero-image img{
+    border: 8px solid var(--color-primary);
+    background: var(--color-task-bg) 50% / cover no-repeat;
+    width: 260px;
     height: 320px;
     flex-shrink: 0;
-    
-    position: relative; /* Para garantir que fique acima do detalhe */
-    z-index: 2; /* Coloca a imagem na frente */
+    position: relative;
+    z-index: 2;
 }
 
 .hero .hero-container .hero-image .image-detail {
     position: absolute;
-    top: 16px; /* Ajusta a posição para dar o efeito de sobreposição */
-    left: 10px; /* Move um pouco para a esquerda para criar o efeito de camada */
-    
-    border: 8px solid var(--Gray-Dark-Default, #030712);
-    background: var(--Gray-Dark-200, #374151);
-    
-    width: 280px;
+    top: 40px;
+    left: 175px; 
+    border: 8px solid var(--color-button);
+    background: var(--color-primary);
+    width: 260px;
     height: 320px;
     flex-shrink: 0;
-    
-    z-index: 1; /* Mantém atrás da imagem */
+    z-index: 1; 
 }
 
+/* ABOUT */
 .about{
-    background: var(--Gray-Dark-50, #111827);
-    display: flex;
-    padding: 96px 80px;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-self: stretch;
+    background: var(--color-task);
 }
 
 .about .about-container{
@@ -183,29 +186,12 @@ header{
     flex: 1 0 0;
 }
 
-.about .about-container .about-description{
+.description{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-self: stretch;
-}
-
-.about .about-container .about-description .about-title{
-    border-radius: 12px;
-    background: var(--Gray-Dark-200, #374151);
-    display: flex;
-    padding: 4px 20px;
-    justify-content: center;
-    align-items: center;
-    color: var(--Gray-Dark-600, #D1D5DB);
-
-    /* Body3/Medium - All */
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px; /* 142.857% */
 }
 
 .about .about-container .about-content{
@@ -218,37 +204,32 @@ header{
 }
 
 .about .about-container .about-content .about-image {
-    position: relative; /* Garante que a posição absoluta da img-detail funcione corretamente */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.about .about-container .about-content .about-image .image {
-    border: 8px solid var(--Gray-Dark-50, #111827);
-    background: url("../assets/my-photo.jpg") lightgray 50% / cover no-repeat;
-    
-    width: 400px;
+.about .about-container .about-content .about-image img {
+    border: 8px solid var(--color-task);
+    background: var(--color-task-bg) 50% / cover no-repeat;
+    width: 380px;
     height: 480px;
     flex-shrink: 0;
-
-    position: relative; /* Mantém a imagem acima do detalhe */
-    z-index: 2; /* Garante que a imagem fique na frente */
+    position: relative;
+    z-index: 2;
 }
 
 .about .about-container .about-content .about-image .img-detail {
     position: absolute;
-    top: 20px; /* Ajusta a sobreposição */
-    left: -20px; /* Move para a esquerda */
-    
-    border: 8px solid var(--Gray-Dark-50, #111827);
-    background: var(--Gray-Dark-200, #374151);
-    
-    width: 400px;
+    top: 20px;
+    left: -20px;
+    border: 8px solid var(--color-button);
+    background: var(--color-task);
+    width: 380px;
     height: 480px;
     flex-shrink: 0;
-
-    z-index: 1; /* Mantém atrás da imagem */
+    z-index: 1;
 }
 
 .about .about-container .about-content .about-text{
@@ -262,32 +243,25 @@ header{
 }
 
 .about .about-container .about-content .about-text .about-title{
-    color: var(--Gray-Dark-900, #F9FAFB);
-
-    /* Heading/H3/Semi Bold - Desktop */
-    font-family: Inter;
+    color: var(--color-secondary);
     font-size: 30px;
     font-style: normal;
     font-weight: 600;
-    line-height: 36px; /* 120% */
+    line-height: 36px;
     letter-spacing: -0.6px;
 }
 
 .about .about-container .about-content .about-text p{
-    color: var(--Gray-Dark-600, #D1D5DB);
-
-    /* Body2/Normal - All */
-    font-family: Inter;
+    color: var(--color-task-bg);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     text-align: justify;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
 }
 
-.skills{
-    background: var(--Gray-Dark-Default, #030712);
-
+/* SKILLS */
+.section{
     display: flex;
     padding: 96px 80px;
     flex-direction: column;
@@ -296,7 +270,11 @@ header{
     align-self: stretch;
 }
 
-.skills .skills-container{
+.skills{
+    background: var(--color-primary);
+}
+
+.resource-container{
     display: flex;
     padding: 0px 32px;
     flex-direction: column;
@@ -305,56 +283,39 @@ header{
     align-self: stretch;
 }
 
-.skills .skills-container .skills-description{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-}
-
-.skills .skills-container .skills-description .skills-title{
+.skills .resource-container .description .skills-title{
     border-radius: 12px;
-    background: var(--Gray-Dark-200, #374151);
-
+    background: var(--color-tertiary);
     display: flex;
     padding: 4px 20px;
     justify-content: center;
     align-items: center;
-
-    color: var(--Gray-Dark-600, #D1D5DB);
-
-    /* Body3/Medium - All */
-    font-family: Inter;
+    color: var(--color-task-bg);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: 20px; /* 142.857% */
+    line-height: 20px;
 }
 
-.skills .skills-container .skills-description p{
+.skills .resource-container .description p{
     align-self: stretch;
     padding: 20px;
-
-    color: var(--Gray-Dark-600, #D1D5DB);
+    color: var(--color-task-bg);
     text-align: center;
-
-    /* Subtitle/Normal - Desktop */
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 28px; /* 140% */
+    line-height: 28px;
 }
 
-.skills .skills-container .skills-display{
+.skills .resource-container .skills-display{
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
 }
 
-.skills .skills-container .skills-display .skill-card{
+.skills .resource-container .skills-display .skill-card{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -363,114 +324,80 @@ header{
     align-self: stretch;
 }
 
-.skills .skills-container .skills-display .skill-card img{
+.skills .resource-container .skills-display .skill-card img{
     width: 64px;
     height: 64px;
     border-radius: 8px;
 }
 
-.skills .skills-container .skills-display .skill-card span{
-    color: var(--Gray-Dark-600, #D1D5DB);
-
-    /* Body1/Normal - Dektop */
-    font-family: Inter;
+.skills .resource-container .skills-display .skill-card span{
+    color: var(--color-task-bg);
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 28px; /* 155.556% */
+    line-height: 28px;
 }
 
+/* PROJECTS */
 .projects{
-    background: var(--Gray-Dark-50, #111827);
-    display: flex;
-    padding: 96px 80px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
+    background: var(--color-task);
 }
 
-.projects .projects-container{
-    display: flex;
-    padding: 0px 32px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 48px;
-    align-self: stretch;
-}
-
-.projects .projects-container .projects-description{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-}
-
-.projects .projects-container .projects-description .projects-title{
+.projects .resource-container .description .projects-title{
     border-radius: 12px;
-    background: var(--Gray-Dark-200, #374151);
-
+    background: var(--color-tertiary);
     display: flex;
     padding: 4px 20px;
     justify-content: center;
     align-items: center;
-
-    color: var(--Gray-Dark-600, #D1D5DB);
-
-    /* Body3/Medium - All */
-    font-family: Inter;
+    color: var(--color-task-bg);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: 20px; /* 142.857% */
+    line-height: 20px;
 }
 
-.projects .projects-container .projects-description p{
+.projects .resource-container .description p{
     align-self: stretch;
     padding: 20px;
-
-    color: var(--Gray-Dark-600, #D1D5DB);
+    color: var(--color-task-bg);
     text-align: center;
-
-    /* Subtitle/Normal - Desktop */
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 28px; /* 140% */
+    line-height: 28px;
 }
 
-.projects .projects-container .projects-display {
+.projects .resource-container .projects-display {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; /* Alinha os cards no centro */
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 50px; /* Adiciona espaçamento uniforme entre os cards */
+    gap: 50px;
 }
 
-.projects .projects-container .projects-display .project-card {
-    flex: 1; /* Faz com que os cards cresçam uniformemente */
-    max-width: 400px; /* Limita o tamanho máximo para manter um bom layout */
-    min-width: 320px; /* Define um tamanho mínimo para manter responsividade */
+.projects .resource-container .projects-display .project-card {
+    flex: 1;
+    max-width: 400px;
+    min-width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
     border-radius: 15px;
-    background: #26313F;
+    background: var(--color-card);
 }
 
-.projects .projects-container .projects-display .project-card img {
-    width: 100%; /* Garante que a imagem ocupe toda a largura do card */
-    height: 180px; /* Reduz a altura da imagem */
+.projects .resource-container .projects-display .project-card img {
+    width: 100%;
+    height: 180px;
     flex-shrink: 0;
     border-radius: 15px 15px 0px 0px;
-    background: lightgray 50% / cover no-repeat;
+    background: var(--color-task-bg) 50% / cover no-repeat;
 }
 
-.projects .projects-container .projects-display .project-card .card-content {
+.projects .resource-container .projects-display .project-card .card-content {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -479,72 +406,63 @@ header{
     padding: 15px;
 }
 
-.projects .projects-container .projects-display .project-card .card-content h2 {
+.projects .resource-container .projects-display .project-card .card-content h2 {
     padding-top: 10px;
-    color: #FFF;
+    color: var(--color-secondary);
     text-align: center;
-    font-size: 28px; /* Reduz tamanho do título */
+    font-size: 28px;
     font-weight: 700;
 }
 
-.projects .projects-container .projects-display .project-card .card-content p {
-    width: 90%; /* Garante que o texto não ultrapasse o card */
-    color: #A9A9A9;
-    font-size: 14px; /* Reduz o tamanho do texto */
+.projects .resource-container .projects-display .project-card .card-content p {
+    width: 90%;
+    color:  var(--color-task-bg);
+    font-size: 14px;
     font-weight: 500;
 }
 
-.projects .projects-container .projects-display .project-card .card-content .technologies-used {
-    color: #fff;
+.projects .resource-container .projects-display .project-card .card-content .technologies-used {
+    color: var(--color-secondary);
     gap: 15px;
 }
 
-.projects .projects-container .projects-display .project-card .card-content .technologies-used span {
-    font-size: 18px; /* Reduz tamanho do texto */
+.projects .resource-container .projects-display .project-card .card-content .technologies-used span {
+    font-size: 18px;
 }
 
-.projects .projects-container .projects-display .project-card .card-content .projects-buttons {
+.projects .resource-container .projects-display .project-card .card-content .projects-buttons {
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
 
-.projects .projects-container .projects-display .project-card .card-content .projects-buttons button {
+.projects .resource-container .projects-display .project-card .card-content .projects-buttons button {
     display: flex;
     padding: 10px;
-    font-size: 14px; /* Reduz tamanho dos botões */
+    font-size: 14px;
     border-radius: 10px;
     border: 0;
-    color: #fff;
+    color: var(--color-secondary);
     justify-content: center;
     align-items: center;
     gap: 10px;
     border-radius: 12px;
-    font-family: Satoshi;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-.projects .projects-container .projects-display .project-card .card-content .projects-buttons #site{
-    background-color: #10B981;
+.projects .resource-container .projects-display .project-card .card-content .projects-buttons #site{
+    background-color: var(--color-button);
 }
 
-.projects .projects-container .projects-display .project-card .card-content .projects-buttons #code{
-    border: 1px solid #FFF;
-    background-color: #26313F;
+.projects .resource-container .projects-display .project-card .card-content .projects-buttons #code{
+    border: 1px solid var(--color-secondary);
+    background-color: var(--color-card);
 }
 
-.contact{
-    display: flex;
-    padding: 96px 80px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-}
-
+/* CONTACT */
 .contact .contact-container{
     display: flex;
     padding: 0px 32px;
@@ -555,45 +473,30 @@ header{
     align-self: stretch;
 }
 
-.contact .contact-container .contact-description{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-}
-
-.contact .contact-container .contact-description .contact-title{
+.title{
     border-radius: 12px;
-    background: var(--Gray-Dark-200, #374151);
+    background: var(--color-tertiary);
     display: flex;
     padding: 4px 20px;
     justify-content: center;
     align-items: center;
-    color: var(--Gray-Dark-600, #D1D5DB);
-
-    /* Body3/Medium - All */
-    font-family: Inter;
+    color: var(--color-task-bg);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: 20px; /* 142.857% */
+    line-height: 20px;
 }
 
-.contact .contact-container .contact-description p{
+.contact .contact-container .description p{
     max-width: 576px;
     align-self: center;
     padding: 20px;
-
-    color: var(--Gray-Dark-600, #D1D5DB);
+    color: var(--color-task-bg);
     text-align: center;
-
-    /* Subtitle/Normal - Desktop */
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 28px; /* 140% */
+    line-height: 28px;
 }
 
 .contact .contact-container .contact-info{
@@ -610,19 +513,16 @@ header{
     justify-content: center;
     align-items: center;
     gap: 20px;
-
-    color: var(--Gray-Dark-900, #F9FAFB);
+    color: var(--color-secondary);
     text-align: center;
-
-    /* Heading/H2/Semi Bold - Desktop */
-    font-family: Inter;
     font-size: 26px;
     font-style: normal;
     font-weight: 600;
-    line-height: 40px; /* 111.111% */
+    line-height: 40px;
     letter-spacing: -0.72px;
 }
 
+/* FOOTER */
 footer{
     display: flex;
     padding: 24px 80px;
@@ -630,14 +530,10 @@ footer{
     justify-content: center;
     align-items: center;
     align-self: stretch;
-
-    color: var(--Gray-Dark-600, #D1D5DB);
-
-    /* Body3/Normal - All */
-    font-family: Inter;
+    color: var(--color-task-bg);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px; /* 142.857% */
+    line-height: 20px;
+    border-top: 2px solid var(--color-button);
 }
-
