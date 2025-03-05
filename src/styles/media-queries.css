@@ -91,13 +91,14 @@
 
 /* 480px */
 @media (max-width: 480px) {
-    .skills .resource-container .skills-display {
-        grid-template-columns: repeat(2, 1fr);
+    .skills .resource-container .skills-display{
+        padding: 0;
+        grid-template-columns: repeat(2, 2fr);
         grid-template-rows: auto;
     }
 
     .skills .resource-container .skills-display .skill-card span{
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .navbar {
@@ -105,7 +106,7 @@
     }
 
     .navbar .anchors span{
-        font-size: 12px;
+        font-size: 9px;
     }
 
     .display {
@@ -139,8 +140,15 @@
         max-width: 100%;
     }
 
-    .contact .contact-container .description p {
+    .projects .resource-container .description p{
         font-size: 16px;
+        align-self: center;
+        width: 300px;
+    }
+
+    .contact .contact-container .description p {
+        font-size: 12px;
+        width: 300px;
     }
 
     .contact .contact-container .contact-info .email {
