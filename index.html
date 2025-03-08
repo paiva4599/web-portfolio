@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Lucca Paiva</title>
     <link rel="stylesheet" href="src/styles/reset.css"/>
     <link rel="stylesheet" href="src/styles/styles.css"/>
@@ -23,7 +24,7 @@
                 <a href="#skills-anchor"><span>Habilidades</span></a>
                 <a href="#projects-anchor"><span>Projetos</span></a>
                 <a href="#contact-anchor"><span>Contato</span></a>
-                <span class="download-button">Download CV</span>
+                <span onclick="downloadCV()" class="download-button">Download CV</span>
             </div>
         </nav>
     </header>
@@ -39,8 +40,8 @@
                     <i class="fa-regular fa-circle-dot" style="color:#10B981"><p>Disponível para novos projetos</p></i>
                 </div>
                 <div class="hero-media">
-                    <i class="fa-brands fa-github"></i>
-                    <i class="fa-brands fa-linkedin"></i>
+                    <a href="https://github.com/paiva4599" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/paiva-rc-lucca/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="hero-image">
@@ -50,9 +51,9 @@
         </div>
     </section>
 
-    <section class="display about">
+    <section id="about-anchor" class="display about">
         <div class="about-container">
-            <div id="about-anchor" class="description">
+            <div class="description">
                 <span class=" title">Sobre mim</span>
             </div>
             <div class="about-content">
@@ -72,9 +73,9 @@
         </div>
     </section>
 
-    <section class="section skills">
+    <section id="skills-anchor" class="section skills">
         <div class="resource-container">
-            <div id="skills-anchor" class="description">
+            <div class="description">
                 <span class="skills-title">Habilidades</span>
                 <p>Algumas de minhas habilidades:</p>
             </div>
@@ -167,9 +168,9 @@
         </div>
     </section>
 
-    <section class="section projects">
+    <section id="projects-anchor" class="section projects">
         <div class="resource-container">
-            <div id="projects-anchor" class="description">
+            <div class="description">
                 <span class="projects-title">Projetos</span>
                 <p>Alguns de meus projetos:</p>
             </div>
@@ -244,9 +245,9 @@
         </div>
     </section>
 
-    <section class="section contact">
+    <section id="contact-anchor" class="section contact">
         <div class="contact-container">
-            <div id="contact-anchor" class="description">
+            <div class="description">
                 <span class="title">Entre em contato</span>
                 <p>Sinta-se à vontade para me contatar se estiver procurando um desenvolvedor, tiver alguma dúvida ou simplesmente quiser se conectar.</p>
             </div>
@@ -254,8 +255,9 @@
             <div class="contact-info">
                 <div class="email">
                     <span class="fa-solid fa-envelope"></span>
-                    <span>paiva.rc.lucca@gmail.com</span>
-                    <span class="fa-regular fa-clone"></span>
+                    <span id="email">paiva.rc.lucca@gmail.com</span>
+                    <span onclick="copyEmail()" class="fa-regular fa-clone"></span>
+                    <span id="copyMessage">Copiado!</span>
                 </div>
             </div>
         </div>
@@ -265,6 +267,6 @@
         <p>© 2025 | Design por Sagar Shah e Desenvolvido por Lucca Paiva</p>
     </footer>
 
-    <script href="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
