@@ -547,7 +547,12 @@ header{
     transition: transform 0.2s ease-in-out, background-color 0.3s ease;
 }
 
-.projects .resource-container .projects-display .more-projects .more-button{
+.projects .resource-container .more-projects{
+    display: flex;
+    align-self: center;
+}
+
+.projects .resource-container .more-projects .more-button{
     display: flex;
     padding: 6px 16px;
     justify-content: center;
