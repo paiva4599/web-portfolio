@@ -379,7 +379,7 @@ header{
 
 .projects .resource-container .projects-display .project-card {
     flex: 1;
-    max-width: 400px;
+    max-width: 300px;
     min-width: 320px;
     min-height: 500px;
     display: flex;
@@ -545,6 +545,19 @@ header{
     background-color:#3a4452;
     transform: scale(1.1);
     transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+}
+
+.projects .resource-container .projects-display .more-projects .more-button{
+    display: flex;
+    padding: 6px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    border: 0px;
+    background: var(--color-button);
+    color: var(--color-secondary);
+    cursor: pointer;
 }
 
 #copyMessage{
